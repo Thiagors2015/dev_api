@@ -1,5 +1,6 @@
 from flask import Flask,request
 from flask_restful import  Resource,Api
+from habilitades import Habilidades
 import json
 app=Flask(__name__)
 api=Api(app)
@@ -40,5 +41,9 @@ class Lista_Desenvolvedores(Resource):
 
 api.add_resource(Desenvolvedor,'/dev/<int:id>')
 api.add_resource(Lista_Desenvolvedores,'/dev/')
+api.add_resource(Habilidades,'/habilidades/')
+api.add_resource(Habilidades,'/habilidades/hbAnt/')
+api.add_resource(Habilidades,'/habilidades/hbAnt/hbNova/')
+
 if __name__ == '__main__':
     app.run(debug=True)
